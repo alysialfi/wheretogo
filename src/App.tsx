@@ -15,10 +15,12 @@ const theme = createTheme({
   },
 });
 
+const BASE_URL = 'https://wheretogo-be-736096159493.us-central1.run.app/nearby-places'
+
 function App() {
   const [userLocation, setUserLocation] = useState<Location | null>(null);
   const fetchNearbyPlaces = async () => {
-    const response = await fetch(`http://127.0.0.1:8000/nearby-places?lat=${userLocation?.lat}&lon=${userLocation?.lng}`);
+    const response = await fetch(`${BASE_URL}?lat=${userLocation?.lat}&lon=${userLocation?.lng}`);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
