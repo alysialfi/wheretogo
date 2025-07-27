@@ -4,7 +4,6 @@ import Paper from '@mui/material/Paper';
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
 import PlaceIcon from '@mui/icons-material/Place';
-import type { SvgIconComponent } from '@mui/icons-material';
 
 
 // Define the props for our component
@@ -19,20 +18,18 @@ interface LocationCardProps {
 
 export const LocationCard: React.FC<LocationCardProps> = ({ rating, emojiLeft, emojiRight, top, left }) => {
   return (
-    // This parent Box handles the absolute positioning and centers the pin under the card
     <Box
       sx={{
         position: 'absolute',
         top: top,
         left: left,
-        transform: 'translateX(-50%)', // Center the card on the left coordinate
+        transform: 'translateX(-50%)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         gap: 0.5,
       }}
     >
-      {/* The white card with shadow */}
       <Paper
         elevation={4}
         sx={{
@@ -81,7 +78,6 @@ export const LocationCard: React.FC<LocationCardProps> = ({ rating, emojiLeft, e
         </Typography>
       </Paper>
 
-      {/* The purple location pin below the card */}
       <PlaceIcon sx={{ color: '#9C6CFE', fontSize: '4rem' }} />
     </Box>
   );
